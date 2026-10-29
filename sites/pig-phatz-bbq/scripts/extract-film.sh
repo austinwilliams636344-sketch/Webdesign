@@ -41,5 +41,5 @@ fs.writeFileSync(p, JSON.stringify(def === "1" ? { ...entry, ...films } : { ...f
 
 # preload the default film's first frame
 FIRST=$(node -e 'console.log(Object.keys(require("./src/films.json"))[0])')
-sed -i '' -E "s#/frames/[^/]+/(hd|sd)/f_0001.webp#/frames/$FIRST/\1/f_0001.webp#g" index.html
+perl -pi -e "s#/frames/[^/]+/(hd|sd)/f_0001.webp#/frames/$FIRST/\$1/f_0001.webp#g" index.html  # portable (macOS + Linux)
 du -sh "$OUT/hd" "$OUT/sd"; echo "film '$KEY': $n frames → src/films.json"

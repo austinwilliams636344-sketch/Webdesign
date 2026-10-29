@@ -1,7 +1,8 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // SITE CONTENT: Pig Phatz BBQ, Garden City, KS (concept / pitch demo).
 // Facts come from research/research.json (public listings found by search). The business has no website;
-// anything marked [PLACEHOLDER] is waiting on the owner (real reviews, photos, confirmed hours).
+// anything marked [PLACEHOLDER] is waiting on the owner (real reviews, confirmed hours).
+// Film + images: AI-generated concept keyframes (film/keyframes), animated for free (no video model).
 // Field-by-field documentation: references/config.md in the cinematic-site skill.
 // ─────────────────────────────────────────────────────────────────────────────
 import {
@@ -121,14 +122,14 @@ export default {
 
   // Measure from the 4 keyframes once the film exists (references/film-pipeline.md → "Framing").
   filmSubjects: {
-    hero: [0.3, 0.25, 0.95, 0.95],
-    ch1: [0.12, 0.2, 0.88, 0.85],
-    ch2: [0.08, 0.08, 0.92, 0.92],
-    ch3: [0.25, 0.25, 0.9, 0.9],
+    hero: [0.24, 0.2, 0.92, 0.97], // K1: the smoker
+    ch1: [0.22, 0.17, 0.92, 0.82], // K2: the floating brisket + smoke
+    ch2: [0.26, 0.05, 0.74, 0.95], // K3: the exploded layers
+    ch3: [0.08, 0.45, 0.94, 0.9], // K4: the tray
   },
 
-  // Placeholder artwork until the film (FILM-BRIEF.md) or the owner's photos arrive.
-  stills: ['img/pit.jpg', 'img/smoke.jpg', 'img/coals.jpg', 'img/hall.jpg'],
+  // The film is in (public/frames/main), so no stills needed.
+  stills: [],
 
   marquee: ['Brisket', 'Burnt ends', 'Ribs', 'Pulled pork', 'Pork belly', 'Wings', 'Chicken legs', 'Catering'],
   marqueeIcon: Flame,
@@ -185,10 +186,10 @@ export default {
     flourish: 'without the stress.',
     text: 'Birthdays, office lunches, game days and reunions. Four steps from first call to empty pans.',
     steps: [
-      { t: 'Call', f: 'and tell us the plan.', d: 'Date, headcount and what your crowd likes. Use the planner above for a starting point.', img: 'img/hall.jpg', meta: ['(620) 640-1007', 'Or message on Facebook'] },
-      { t: 'Pick', f: 'your meats and sides.', d: 'Brisket, burnt ends, ribs, pulled pork, pork belly, wings, chicken. Mix and match.', img: 'img/coals.jpg', meta: ['7 smoked meats', 'Sides to match'] },
-      { t: 'Smoke', f: 'low and slow.', d: 'Your order goes on the pit ahead of time, so it comes off right when you need it.', img: 'img/pit.jpg', meta: ['Smoked to order', 'Packed hot'] },
-      { t: 'Serve', f: 'and take the credit.', d: 'Pick it up downtown or ask about setup. Then watch the pans empty.', img: 'img/smoke.jpg', meta: ['Pickup on Main St', 'Ask about setup'] },
+      { t: 'Call', f: 'and tell us the plan.', d: 'Date, headcount and what your crowd likes. Use the planner above for a starting point.', img: 'img/k2.jpg', meta: ['(620) 640-1007', 'Or message on Facebook'] },
+      { t: 'Pick', f: 'your meats and sides.', d: 'Brisket, burnt ends, ribs, pulled pork, pork belly, wings, chicken. Mix and match.', img: 'img/k3.jpg', meta: ['7 smoked meats', 'Sides to match'] },
+      { t: 'Smoke', f: 'low and slow.', d: 'Your order goes on the pit ahead of time, so it comes off right when you need it.', img: 'img/k1.jpg', meta: ['Smoked to order', 'Packed hot'] },
+      { t: 'Serve', f: 'and take the credit.', d: 'Pick it up downtown or ask about setup. Then watch the pans empty.', img: 'img/k4.jpg', meta: ['Pickup on Main St', 'Ask about setup'] },
     ],
   },
 
@@ -197,8 +198,8 @@ export default {
     title: 'Seven meats.',
     flourish: 'One pit.',
     images: [
-      { src: 'img/svc-pit.jpg', alt: 'Embers rising from the pit' },
-      { src: 'img/svc-coals.jpg', alt: 'Glowing coals' },
+      { src: 'img/svc-fire.jpg', alt: 'Fire in the smoker firebox' },
+      { src: 'img/svc-tray.jpg', alt: 'Tray of brisket, ribs, burnt ends and pulled pork' },
     ],
     items: [
       { icon: Beef, t: 'Brisket', d: 'Sliced across the grain, with real bark and a deep smoke ring.' },
@@ -232,7 +233,7 @@ export default {
     title: 'Got a crowd',
     flourish: 'to feed?',
     text: 'Tell us the date, the headcount and what you’re celebrating. Pig Phatz will get back to you to plan the menu.',
-    image: 'img/pit.jpg',
+    image: 'img/k4.jpg',
     fields: ['Full name', 'Email', 'Phone'],
     interestLabel: 'I’m asking about…',
     interests: ['Catering for an event', 'A large pickup order', 'The menu', 'Something else'],

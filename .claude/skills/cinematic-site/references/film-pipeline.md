@@ -118,3 +118,16 @@ When there are no generation tools in the session, or the user wants to make the
 
 Optional extras worth listing, each one line with a ready prompt: a 6–10 s hero loop for social/ads, a vertical
 9:16 cut of S1 for Reels/TikTok, and a still of K4 for the contact background.
+
+## 7. Free film from keyframes (no video model)
+
+When the user can't pay for video generation, they only need the 4 keyframe images (free image generators
+work: ChatGPT, Gemini, Microsoft Designer). Then:
+
+```bash
+python3 ${CLAUDE_SKILL_DIR}/scripts/still-film.py <site>/film/keyframes <site>/film   # K1.jpg..K4.jpg -> seg1-3.mp4
+npm run film -- main "Main" film/seg1.mp4 film/seg2.mp4 film/seg3.mp4 --default
+```
+Slow push-ins, crossfades that dip through darkness, and drifting embers (set the ember amount to 0 for
+industries without fire). It reads as cinematic on scroll; it can't show real motion like a layer separating, so
+offer AI video as an upgrade once the client signs. Takes ~3 min on a laptop.

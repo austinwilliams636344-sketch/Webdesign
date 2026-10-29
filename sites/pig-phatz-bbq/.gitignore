@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 qa
+
+# Film frames are generated from film/seg*.mp4 by: npm run film -- main "Main" film/seg1.mp4 film/seg2.mp4 film/seg3.mp4 --default
+public/frames

@@ -74,7 +74,8 @@ Write `<site>/film/FILM-BRIEF.md` following film-pipeline.md §6: the story in o
 S1–S3 video prompts, settings, the exact file names to save as, and the one command that adds the film.
 Fill every bracket with this business's real details. Until the film exists, set `stills` in site.config.js
 (real photos first, in story order: scene, subject, detail, result) so the scroll section is never empty.
-Give the user the brief's prompts in the final message too, ready to paste.
+Give the user the brief's prompts in the final message too, ready to paste. If they can't pay for video
+generation, they only make the 4 keyframes and you animate them for free (film-pipeline.md §7).
 
 ### 6. Content (while videos render)
 - `src/theme.js`: palette. `src/site.config.js`: replace every Aurea value with researched content, in the
