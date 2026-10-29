@@ -1,13 +1,14 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // SITE CONTENT: Pig Phatz BBQ, Garden City, KS (concept / pitch demo).
-// Facts come from research/research.json (public listings found by search). The business has no website;
-// anything marked [PLACEHOLDER] is waiting on the owner (real reviews, confirmed hours).
+// Facts: the business details supplied for the Lovable build (Phatz Smokehouse Showcase): address, phone,
+// owners, menu, Google rating and review excerpts. See research/research.json for sources and conflicts.
+// Still to confirm with the owners: weekly hours, prices.
 // Film + images: AI-generated concept keyframes (film/keyframes), animated for free (no video model).
 // Field-by-field documentation: references/config.md in the cinematic-site skill.
 // ─────────────────────────────────────────────────────────────────────────────
 import {
-  Flame, MapPin, UtensilsCrossed, Beef, Drumstick, Soup, Users, Clock,
-  Package, Ham, Sandwich,
+  Flame, MapPin, Beef, Drumstick, Soup, Users, Star, Heart,
+  Package, Ham, Sandwich, CakeSlice,
 } from 'lucide-react'
 
 // Catering planner maths: planning quantities only, never prices (Pig Phatz hasn't published any).
@@ -19,23 +20,25 @@ function cateringPlan(guests) {
   return { meat, sides, meats, pans: Math.max(1, Math.ceil(guests / 25)) }
 }
 
+const PHONE = '(620) 295-0113'
+
 export default {
   meta: {
-    title: 'Pig Phatz BBQ: Smoked meats in downtown Garden City, KS',
-    description: 'Brisket, burnt ends, ribs, pulled pork and pork belly, smoked at Pig Phatz BBQ inside the Main Street Food & Brew Hall, 207 N Main St, Garden City, KS. Catering available.',
+    title: 'Pig Phatz BBQ: Slow-smoked BBQ in Garden City, KS',
+    description: 'Family-owned BBQ on Spruce St in Garden City, KS. Slow-smoked brisket, pork belly burnt ends, ribs and pulled pork, huge portions and catering. Rated 4.7 from 88 Google reviews.',
   },
 
   brand: {
     name: 'Pig Phatz', // bold sans part of the logo
     accent: 'BBQ', // serif italic part of the logo
-    logo: 'initial',
+    logo: 'initial', // swap for 'img/logo.jpg' once the bulldog logo file is added to public/img
     legalName: 'Pig Phatz BBQ LLC',
-    phone: '(620) 640-1007',
-    phoneHref: '+16206401007',
+    phone: PHONE,
+    phoneHref: '+16202950113',
     email: '',
     area: 'Garden City, Kansas',
-    hours: 'Call for today’s hours', // listings disagree (Thu–Sun vs Tue–Sun, 11 AM–9 PM): confirm with the owner
-    address: ['207 N Main St', 'Garden City, KS 67846'],
+    hours: 'Call for today’s hours', // weekly hours not confirmed yet
+    address: ['210 E Spruce St', 'Garden City, KS 67846'],
     since: null,
   },
 
@@ -51,14 +54,14 @@ export default {
   },
 
   hero: {
-    eyebrow: 'Main Street Food & Brew Hall · Garden City, KS',
+    eyebrow: 'Family-owned · 210 E Spruce St · Garden City, KS',
     lines: ['Smoked', 'low &'],
     flourish: 'slow.',
-    sub: 'Brisket, burnt ends, ribs, pulled pork and pork belly, straight off the pit in downtown Garden City. Feeding a crowd? We cater.',
+    sub: 'Brisket, pork belly burnt ends, ribs and pulled pork, in huge portions, from Frankie & Beth on Spruce St. Feeding a crowd? We cater.',
     meta: [
-      { icon: Flame, text: '7 smoked meats', filled: true },
-      { icon: MapPin, text: '207 N Main St' },
-      { icon: UtensilsCrossed, text: 'Catering available' },
+      { icon: Star, text: '4.7 from 88 Google reviews', filled: true },
+      { icon: Heart, text: 'Family-owned & operated' },
+      { icon: Users, text: 'Dine in · Take out · Catering' },
     ],
     scrollCue: 'Scroll — from the pit to your plate',
   },
@@ -83,8 +86,8 @@ export default {
     cta: 'Plan my order',
     submit: 'Send my catering request',
     sending: 'Sending…',
-    privacy: 'Planning estimate only. Pig Phatz confirms quantities, menu and pricing with you directly.',
-    doneText: 'Pig Phatz will reach out to confirm your menu, quantities and pickup or setup.',
+    privacy: 'Planning estimate only. Frankie & Beth confirm the menu, portions and pricing with you directly.',
+    doneText: `Pig Phatz will reach out to plan your menu. Want to talk now? Call ${PHONE}.`,
   },
 
   chapters: [
@@ -92,22 +95,22 @@ export default {
       eyebrow: '01 — The pit',
       title: 'It starts',
       flourish: 'with smoke.',
-      body: 'Before the doors open at the Food & Brew Hall, the meat is already on the smoker. Time, heat and smoke do the work.',
-      aside: { type: 'stat', value: '7', text: 'smoked meats on the menu, from brisket and ribs to pork belly and chicken legs.' },
+      body: 'Frankie and Beth, the husband-and-wife team behind Pig Phatz, put the meat on the smoker long before you walk in. Then they come out to greet you themselves.',
+      aside: { type: 'stat', value: '4.7★', text: 'from 88 Google reviews. Guests keep mentioning the huge portions.' },
     },
     {
       eyebrow: '02 — Anatomy of a brisket',
       title: 'Bark outside.',
       flourish: 'Tender inside.',
-      body: 'A smoked brisket is built in layers. Each one is the reason people come back for the next slice.',
+      body: 'The crowd favorite is built in layers. Each one is the reason people come back for the next slice.',
       aside: {
         type: 'list',
         items: [
           { t: 'The bark', d: 'Rub and smoke, set into a dark crust' },
           { t: 'The smoke ring', d: 'The pink band hours on the pit leave' },
           { t: 'The fat cap', d: 'Rendered down to keep every slice juicy' },
-          { t: 'The flat', d: 'Lean slices, cut across the grain' },
-          { t: 'The point', d: 'Cubed, sauced and smoked again: burnt ends' },
+          { t: 'The flat', d: 'Tender slices, cut across the grain' },
+          { t: 'The point', d: 'Cubed and caramelized into burnt ends' },
         ],
       },
     },
@@ -115,12 +118,12 @@ export default {
       eyebrow: '03 — Your table',
       title: 'Off the pit.',
       flourish: 'Onto your plate.',
-      body: 'Grab a tray at the hall on North Main, or let Pig Phatz bring the smoke to your party, office or game day.',
-      aside: { type: 'stats', items: [['7', 'smoked meats'], ['4', 'kitchens in the hall'], ['11 AM', 'doors open']] },
+      body: 'Pull up a chair on Spruce St, take it to go, or let Frankie & Beth bring the smoke to your party, office lunch or celebration.',
+      aside: { type: 'stats', items: [['4.7★', 'on Google'], ['88', 'reviews'], ['$10–20', 'typical per person']] },
     },
   ],
 
-  // Measure from the 4 keyframes once the film exists (references/film-pipeline.md → "Framing").
+  // Measured from the 4 keyframes (references/film-pipeline.md → "Framing").
   filmSubjects: {
     hero: [0.24, 0.2, 0.92, 0.97], // K1: the smoker
     ch1: [0.22, 0.17, 0.92, 0.82], // K2: the floating brisket + smoke
@@ -131,18 +134,18 @@ export default {
   // The film is in (public/frames/main), so no stills needed.
   stills: [],
 
-  marquee: ['Brisket', 'Burnt ends', 'Ribs', 'Pulled pork', 'Pork belly', 'Wings', 'Chicken legs', 'Catering'],
+  marquee: ['Brisket', 'Pork belly burnt ends', 'Ribs', 'Pulled pork', 'Chicken wings', 'Creamy mac & cheese', 'Beth’s cobbler', 'Catering'],
   marqueeIcon: Flame,
 
   pillars: {
-    eyebrow: 'Downtown Garden City',
-    title: 'Real smoke,',
-    flourish: 'right on Main Street.',
+    eyebrow: 'Family-owned & operated',
+    title: 'Good BBQ.',
+    flourish: 'Even better people.',
     stats: [
-      { end: 7, label: 'Smoked meats on the menu' },
-      { end: 207, prefix: '', label: 'North Main Street, downtown' },
-      { end: 4, label: 'Kitchens in the Food & Brew Hall' },
-      { end: 11, suffix: ' AM', label: 'Doors open (call to confirm days)' },
+      { end: 4.7, decimals: 1, suffix: '★', label: 'Average Google rating' },
+      { end: 88, label: 'Google reviews' },
+      { end: 6, label: 'Smoked meats on the menu' },
+      { end: 20, prefix: '$10–', label: 'Typical per person' },
     ],
   },
 
@@ -150,12 +153,12 @@ export default {
     {
       kind: 'notifications',
       k: 'Order',
-      t: 'Your order, called out hot',
-      d: 'Order at the counter or call ahead, then grab a seat in the hall while it comes off the pit.',
+      t: 'Dine in or take it home',
+      d: `Call ${PHONE} to order ahead, or pull up a chair and let Frankie & Beth say hi.`,
       items: [
         { icon: Beef, t: 'Brisket is sliced', d: 'Fresh off the smoker' },
-        { icon: Ham, t: 'Burnt ends are back', d: 'While the batch lasts' },
-        { icon: Package, t: 'Catering order packed', d: 'Ready for pickup' },
+        { icon: Ham, t: 'Pork belly burnt ends', d: 'Caramelized and ready' },
+        { icon: Package, t: 'Your to-go order is up', d: 'Ready for pickup on Spruce St' },
       ],
     },
     {
@@ -171,7 +174,7 @@ export default {
       kind: 'booking',
       k: 'Cater',
       t: 'Catering, booked in a minute',
-      d: 'Pick a date, tell us the headcount and we’ll come back with a menu that feeds everyone.',
+      d: 'Events, parties, corporate lunches and celebrations of life. Tell us the date and headcount.',
       heading: 'Next weekend',
       note: 'Catering request',
       confirm: 'Saturday 4:00 PM · 60 guests · request sent',
@@ -182,72 +185,75 @@ export default {
 
   process: {
     eyebrow: 'Catering with Pig Phatz',
-    title: 'Feeding a crowd',
-    flourish: 'without the stress.',
-    text: 'Birthdays, office lunches, game days and reunions. Four steps from first call to empty pans.',
+    title: 'Feeding a crowd?',
+    flourish: 'We’ve got you.',
+    text: 'Events. Parties. Corporate lunches. Celebrations of life. Bring your people. We’ll bring the BBQ.',
     steps: [
-      { t: 'Call', f: 'and tell us the plan.', d: 'Date, headcount and what your crowd likes. Use the planner above for a starting point.', img: 'img/k2.jpg', meta: ['(620) 640-1007', 'Or message on Facebook'] },
-      { t: 'Pick', f: 'your meats and sides.', d: 'Brisket, burnt ends, ribs, pulled pork, pork belly, wings, chicken. Mix and match.', img: 'img/k3.jpg', meta: ['7 smoked meats', 'Sides to match'] },
-      { t: 'Smoke', f: 'low and slow.', d: 'Your order goes on the pit ahead of time, so it comes off right when you need it.', img: 'img/k1.jpg', meta: ['Smoked to order', 'Packed hot'] },
-      { t: 'Serve', f: 'and take the credit.', d: 'Pick it up downtown or ask about setup. Then watch the pans empty.', img: 'img/k4.jpg', meta: ['Pickup on Main St', 'Ask about setup'] },
+      { t: 'Call', f: 'and tell us the plan.', d: 'Date, headcount and what your crowd likes. Use the planner above for a starting point.', img: 'img/k2.jpg', meta: [PHONE, 'Or use the form below'] },
+      { t: 'Pick', f: 'your meats and sides.', d: 'Brisket, pork belly burnt ends, ribs, pulled pork, wings. Mac & cheese, potato salad, Beth’s cobbler.', img: 'img/k3.jpg', meta: ['6 smoked meats', 'Homemade sides'] },
+      { t: 'Smoke', f: 'low and slow.', d: 'Your order goes on the pit ahead of time, so it comes off right when you need it.', img: 'img/k1.jpg', meta: ['Smoked for your event', 'Big portions'] },
+      { t: 'Serve', f: 'and take the credit.', d: 'One catering customer called them “so professional and easygoing.” Then watch the pans empty.', img: 'img/k4.jpg', meta: ['Personal quote', 'No payment to ask'] },
     ],
   },
 
   services: {
-    eyebrow: 'On the menu',
-    title: 'Seven meats.',
-    flourish: 'One pit.',
+    eyebrow: 'Straight from the smoker',
+    title: 'Signature smoke.',
+    flourish: 'Homemade sides.',
     images: [
       { src: 'img/svc-fire.jpg', alt: 'Fire in the smoker firebox' },
       { src: 'img/svc-tray.jpg', alt: 'Tray of brisket, ribs, burnt ends and pulled pork' },
     ],
     items: [
-      { icon: Beef, t: 'Brisket', d: 'Sliced across the grain, with real bark and a deep smoke ring.' },
-      { icon: Flame, t: 'Burnt ends', d: 'Cubes from the brisket point, smoked twice. Go early.' },
-      { icon: Ham, t: 'Ribs & pork belly', d: 'Pork done two ways: ribs off the bone and rich, rendered belly.' },
-      { icon: Sandwich, t: 'Pulled pork', d: 'Smoked shoulder, pulled by hand. On a plate or a bun.' },
-      { icon: Drumstick, t: 'Wings & chicken legs', d: 'Smoked chicken for the crowd that wants something lighter.' },
-      { icon: Soup, t: 'Sides', d: 'Apple pie baked beans and homemade fries, two sides customers keep mentioning.' },
+      { icon: Beef, t: 'Brisket', d: 'The crowd favorite: rich bark, tender slices. Also piled on a loaded brisket baked potato.' },
+      { icon: Flame, t: 'Pork belly burnt ends', d: 'Smoky, juicy bites with a caramelized finish. Every bite hits.' },
+      { icon: Ham, t: 'Ribs & smoked pork belly', d: 'Slow-smoked, saucy and made for getting your hands messy.' },
+      { icon: Sandwich, t: 'Pulled pork', d: 'Tender and smoky. Even better with the house BBQ sauce.' },
+      { icon: Drumstick, t: 'Chicken wings', d: 'Big smoke flavor in every wing. Bring your appetite.' },
+      { icon: CakeSlice, t: 'Sides & Beth’s cobbler', d: 'Creamy mac & cheese, homemade fries, fried pickles, potato salad, and Beth’s homemade cobbler.' },
     ],
   },
 
   reviews: {
-    eyebrow: 'Garden City, in their words',
-    title: 'Come hungry.',
-    flourish: 'Leave happy.',
-    // REAL reviews only. Paste the owner's best Google / Facebook reviews here (quote, first name, what they ordered).
+    eyebrow: 'Rated 4.7 from 88 Google reviews',
+    title: 'The people',
+    flourish: 'have spoken.',
+    // Real Google review excerpts (from the Lovable build's supplied content).
     items: [
-      { q: '[PLACEHOLDER: paste a real customer review here]', n: '[First name 1]', p: 'Google review' },
-      { q: '[PLACEHOLDER: paste a real customer review here]', n: '[First name 2]', p: 'Facebook review' },
-      { q: '[PLACEHOLDER: paste a real catering review here]', n: '[First name 3]', p: 'Catering customer' },
+      { q: 'The best BBQ I’ve ever eaten. The brisket is amazing, as are the burnt ends.', n: 'Carlos N.', p: 'Google review' },
+      { q: 'I’ve been looking for good pork belly for quite some time. I finally found it at Pig Phatz!', n: 'Adam S.', p: 'Google review' },
+      { q: 'Fantastic food, cooked perfectly and quickly! The portion sizes are huge!', n: 'Chris O.', p: 'Google review' },
+      { q: 'They catered an event I helped with — so professional and easygoing. The food was incredibly delicious.', n: 'Robyn M.', p: 'Google review · catering' },
+      { q: 'The Mac n cheese is so creamy… the pork belly is juicy and flavorful.', n: 'Kristie M.', p: 'Google review' },
+      { q: 'Beth’s cobbler is nothing short of amazing.', n: 'Roman S.', p: 'Google review' },
     ],
     trust: [
-      { icon: MapPin, t: 'Downtown on Main', d: 'Inside the Main Street Food & Brew Hall, 207 N Main St' },
-      { icon: Users, t: 'Catering for any crowd', d: 'Parties, offices, teams and family reunions' },
-      { icon: Clock, t: 'Doors open at 11 AM', d: 'Call (620) 640-1007 to confirm today’s hours' },
+      { icon: Heart, t: 'Family-owned', d: 'Frankie & Beth come out to greet you personally' },
+      { icon: MapPin, t: '210 E Spruce St', d: 'Garden City, KS 67846 · dine in or take out' },
+      { icon: Users, t: 'Catering for any crowd', d: 'Events, parties, corporate lunches, celebrations of life' },
     ],
   },
 
   contact: {
     eyebrow: 'Catering & large orders',
-    title: 'Got a crowd',
-    flourish: 'to feed?',
-    text: 'Tell us the date, the headcount and what you’re celebrating. Pig Phatz will get back to you to plan the menu.',
+    title: 'Let’s feed',
+    flourish: 'your people.',
+    text: 'Share a few details and Frankie & Beth will get the catering conversation started. You’ll work out the menu and pricing together.',
     image: 'img/k4.jpg',
     fields: ['Full name', 'Email', 'Phone'],
-    interestLabel: 'I’m asking about…',
-    interests: ['Catering for an event', 'A large pickup order', 'The menu', 'Something else'],
-    messagePlaceholder: 'Date, headcount, pickup or setup, favorite meats…',
+    interestLabel: 'What’s the occasion?',
+    interests: ['Party or celebration', 'Corporate event', 'Celebration of life', 'A large to-go order', 'Something else'],
+    messagePlaceholder: 'Date, headcount, venue, favorite meats and sides…',
     upload: null,
-    submit: 'Send my request',
-    successTitle: 'Got it. Fire’s lit.',
-    successText: 'Pig Phatz will reach out to plan your order. Need it sooner? Call (620) 640-1007.',
+    submit: 'Request a catering quote',
+    successTitle: 'You bring the people. We’ll talk BBQ.',
+    successText: `This is a quote request, not a confirmed booking. Want to talk now? Call ${PHONE}.`,
   },
 
   footer: {
-    blurb: 'Brisket, burnt ends, ribs, pulled pork and more, smoked in downtown Garden City at the Main Street Food & Brew Hall. Catering available.',
+    blurb: 'Family-owned BBQ on Spruce St in Garden City, KS. Slow-smoked brisket, pork belly burnt ends, ribs and pulled pork, huge portions, homemade sides and catering.',
     status: '',
-    services: ['Brisket', 'Burnt ends', 'Ribs & pork belly', 'Catering'],
+    services: ['Brisket', 'Pork belly burnt ends', 'Ribs', 'Catering'],
     watermark: 'pig phatz',
     note: 'Concept website.',
   },

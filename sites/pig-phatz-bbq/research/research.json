@@ -3,22 +3,104 @@
   "legalName": "Pig Phatz BBQ LLC",
   "industry": "Barbecue restaurant + catering",
   "city": "Garden City, KS",
-  "address": ["207 N Main St (inside Main Street Food & Brew Hall)", "Garden City, KS 67846"],
-  "phone": "(620) 640-1007",
+  "address": [
+    "210 E Spruce St",
+    "Garden City, KS 67846"
+  ],
+  "phone": "(620) 295-0113",
   "phone_conflict": "Garden City Chamber listing shows (620) 295-0113 and an older address, 210 E Spruce St. Most sources use 207 N Main St and (620) 640-1007.",
   "hours": "11 AM - 9 PM",
   "hours_conflict": "VisitGCK: Thursday-Sunday. Yelp: Tuesday-Sunday. Garden City Downtown Vision: closed Sat & Sun. Confirm with the owner.",
   "website": null,
-  "menu": ["Ribs", "Brisket", "Pulled pork", "Wings", "Pork belly", "Burnt ends", "Chicken legs", "Sides"],
-  "review_mentions": ["Apple pie baked beans", "Homemade French fries", "Brisket egg roll", "Friendly owners", "Catering kept food warm for hours", "Generous catering portions"],
-  "rating": { "value": 4.8, "count": 36, "source": "one aggregator via search summary; unverified, not used on the site" },
-  "reviews": [],
-  "reviews_note": "No verbatim review text with names could be read (Facebook, Yelp and Google are blocked from this session). Site uses clearly marked placeholders.",
+  "menu": {
+    "Meats": [
+      "Brisket",
+      "Pork Belly Burnt Ends",
+      "Ribs",
+      "Pulled Pork",
+      "Chicken Wings",
+      "Smoked Pork Belly"
+    ],
+    "Plates": [
+      "Brisket Baked Potato"
+    ],
+    "Sides": [
+      "Creamy Mac & Cheese",
+      "Homemade Fries",
+      "Fried Pickles",
+      "Potato Salad",
+      "House BBQ Sauce"
+    ],
+    "Desserts": [
+      "Beth's Homemade Cobbler"
+    ],
+    "Drinks": [
+      "Unicorn Water",
+      "Root Beer"
+    ]
+  },
+  "review_mentions": [
+    "Apple pie baked beans",
+    "Homemade French fries",
+    "Brisket egg roll",
+    "Friendly owners",
+    "Catering kept food warm for hours",
+    "Generous catering portions"
+  ],
+  "rating": {
+    "value": 4.7,
+    "count": 88,
+    "source": "Google (supplied for the Lovable build)"
+  },
+  "reviews": [
+    {
+      "quote": "The best BBQ I've ever eaten. The brisket is amazing, as are the burnt ends.",
+      "author": "Carlos N.",
+      "source": "Google"
+    },
+    {
+      "quote": "I've been looking for good pork belly for quite some time. I finally found it at Pig Phatz!",
+      "author": "Adam S.",
+      "source": "Google"
+    },
+    {
+      "quote": "Beth's cobbler is nothing short of amazing.",
+      "author": "Roman S.",
+      "source": "Google"
+    },
+    {
+      "quote": "Fantastic food, cooked perfectly and quickly! The portion sizes are huge!",
+      "author": "Chris O.",
+      "source": "Google"
+    },
+    {
+      "quote": "Ate there three times in my week-plus stay in Garden City and it's simply the best.",
+      "author": "Sharkabrah Productions",
+      "source": "Google"
+    },
+    {
+      "quote": "They catered an event I helped with - so professional and easygoing. The food was incredibly delicious.",
+      "author": "Robyn M.",
+      "source": "Google"
+    },
+    {
+      "quote": "The Mac n cheese is so creamy... the pork belly is juicy and flavorful.",
+      "author": "Kristie M.",
+      "source": "Google"
+    },
+    {
+      "quote": "Great pit stop on our way through Kansas. Awesome ribs and great brisket!",
+      "author": "Kyle B.",
+      "source": "Google"
+    }
+  ],
+  "reviews_note": "Excerpts as supplied for the Lovable build (src/lib/restaurant.ts).",
   "grand_opening": "July 17 (year not shown) at Main St Food & Brew Hall, per VisitGCK event listing",
   "hall": "Main Street Food & Brew Hall: four restaurants in one location (Yelp hall listing)",
   "images": [],
   "images_note": "No real photos reachable. Placeholder artwork (abstract smoke/embers, generated procedurally) in public/img until the owner's photos arrive.",
   "sources": [
+    "Lovable project 'Phatz Smokehouse Showcase' (201df115-f4b5-4ffd-bcf3-ddc877e213a5): src/lib/restaurant.ts, src/routes/index.tsx",
     "https://www.facebook.com/p/Pig-Phatz-BBQ-LLC-61577218321040/",
     "https://www.visitgck.com/restaurants/pig-phatz-bbq/",
     "https://www.visitgck.com/event/pig-phatz-bbq-grand-opening-at-main-st-food-brew-hall/",
@@ -28,5 +110,10 @@
     "https://www.mapquest.com/us/kansas/pig-phatz-bbq-790565591",
     "https://www.yelp.com/biz/main-street-food-and-brew-hall-garden-city"
   ],
-  "method": "Web search result summaries only; direct page fetches were blocked by the session network policy."
+  "method": "Web search result summaries only; direct page fetches were blocked by the session network policy.",
+  "address_note": "Uses the details supplied for the Lovable build (and the Chamber listing). Older listings show 207 N Main St (Main Street Food & Brew Hall) and (620) 640-1007; likely the earlier location. Confirm with the owners.",
+  "owners": "Frankie & Beth (husband-and-wife), greet guests personally",
+  "service": "Dine in, take out, catering (events, parties, corporate, celebrations of life)",
+  "price": "Typical dining $10-20 per person",
+  "logo": "Bulldog logo exists in the Lovable project (public/logo.jpg) but could not be downloaded into this session."
 }
