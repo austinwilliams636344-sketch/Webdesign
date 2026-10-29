@@ -35,7 +35,7 @@ export function ContactForm() {
           <p className="mt-6 max-w-md text-lg leading-relaxed text-ink/65">{c.text}</p>
           <ul className="mt-10 space-y-4 text-ink/75">
             <li className="flex items-center gap-3"><Phone className="h-4 w-4 text-primary" /> <a href={`tel:${brand.phoneHref}`} className="hover:text-ink">{brand.phone}</a></li>
-            <li className="flex items-center gap-3"><Mail className="h-4 w-4 text-primary" /> <a href={`mailto:${brand.email}`} className="hover:text-ink">{brand.email}</a></li>
+            {brand.email && <li className="flex items-center gap-3"><Mail className="h-4 w-4 text-primary" /> <a href={`mailto:${brand.email}`} className="hover:text-ink">{brand.email}</a></li>}
             <li className="flex items-center gap-3"><MapPin className="h-4 w-4 text-primary" /> {brand.area}</li>
             {brand.hours && <li className="flex items-center gap-3"><Clock className="h-4 w-4 text-primary" /> {brand.hours}</li>}
           </ul>

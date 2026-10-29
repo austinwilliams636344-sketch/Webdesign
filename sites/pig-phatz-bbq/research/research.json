@@ -1,0 +1,32 @@
+{
+  "name": "Pig Phatz BBQ",
+  "legalName": "Pig Phatz BBQ LLC",
+  "industry": "Barbecue restaurant + catering",
+  "city": "Garden City, KS",
+  "address": ["207 N Main St (inside Main Street Food & Brew Hall)", "Garden City, KS 67846"],
+  "phone": "(620) 640-1007",
+  "phone_conflict": "Garden City Chamber listing shows (620) 295-0113 and an older address, 210 E Spruce St. Most sources use 207 N Main St and (620) 640-1007.",
+  "hours": "11 AM - 9 PM",
+  "hours_conflict": "VisitGCK: Thursday-Sunday. Yelp: Tuesday-Sunday. Garden City Downtown Vision: closed Sat & Sun. Confirm with the owner.",
+  "website": null,
+  "menu": ["Ribs", "Brisket", "Pulled pork", "Wings", "Pork belly", "Burnt ends", "Chicken legs", "Sides"],
+  "review_mentions": ["Apple pie baked beans", "Homemade French fries", "Brisket egg roll", "Friendly owners", "Catering kept food warm for hours", "Generous catering portions"],
+  "rating": { "value": 4.8, "count": 36, "source": "one aggregator via search summary; unverified, not used on the site" },
+  "reviews": [],
+  "reviews_note": "No verbatim review text with names could be read (Facebook, Yelp and Google are blocked from this session). Site uses clearly marked placeholders.",
+  "grand_opening": "July 17 (year not shown) at Main St Food & Brew Hall, per VisitGCK event listing",
+  "hall": "Main Street Food & Brew Hall: four restaurants in one location (Yelp hall listing)",
+  "images": [],
+  "images_note": "No real photos reachable. Placeholder artwork (abstract smoke/embers, generated procedurally) in public/img until the owner's photos arrive.",
+  "sources": [
+    "https://www.facebook.com/p/Pig-Phatz-BBQ-LLC-61577218321040/",
+    "https://www.visitgck.com/restaurants/pig-phatz-bbq/",
+    "https://www.visitgck.com/event/pig-phatz-bbq-grand-opening-at-main-st-food-brew-hall/",
+    "https://www.yelp.com/biz/pig-phatz-bbq-garden-city",
+    "https://www.gcdowntown.com/businesses/pig-phatz-bbq/",
+    "https://business.gckschamber.com/list/member/pig-phatz-bbq-llc-5676",
+    "https://www.mapquest.com/us/kansas/pig-phatz-bbq-790565591",
+    "https://www.yelp.com/biz/main-street-food-and-brew-hall-garden-city"
+  ],
+  "method": "Web search result summaries only; direct page fetches were blocked by the session network policy."
+}

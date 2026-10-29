@@ -4,7 +4,7 @@ import puppeteer from 'puppeteer-core'
 const URL = process.env.URL || 'http://localhost:5173/'
 const SIZES = (process.argv[2] || '1440x900x2,2560x1440x1,390x844x3').split(',')
 const chrome = process.env.CHROME || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
-const b = await puppeteer.launch({ executablePath: chrome, headless: 'new', args: ['--use-angle=metal', '--enable-gpu-rasterization', '--ignore-gpu-blocklist'] })
+const b = await puppeteer.launch({ executablePath: chrome, headless: 'new', args: [...(process.platform === 'darwin' ? ['--use-angle=metal'] : ['--no-sandbox']), '--enable-gpu-rasterization', '--ignore-gpu-blocklist'] })
 for (const sz of SIZES) {
   const [w, h, dpr] = sz.split('x').map(Number)
   const p = await b.newPage()

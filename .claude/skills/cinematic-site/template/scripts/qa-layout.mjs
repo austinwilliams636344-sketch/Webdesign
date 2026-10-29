@@ -10,7 +10,7 @@ const SIZES = (process.argv[2] || '1680x972x1,1440x900x2,1280x720x1,1024x768x1,3
 const STOPS = [0, 0.22, 0.55, 0.93] // hero, chapter 1, 2, 3
 const out = 'qa'; mkdirSync(out, { recursive: true })
 const chrome = process.env.CHROME || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
-const b = await puppeteer.launch({ executablePath: chrome, headless: 'new', args: ['--use-angle=metal'] })
+const b = await puppeteer.launch({ executablePath: chrome, headless: 'new', args: [...(process.platform === 'darwin' ? ['--use-angle=metal'] : ['--no-sandbox'])] })
 for (const sz of SIZES) {
   const [w, h, dpr] = sz.split('x').map(Number)
   const p = await b.newPage()
