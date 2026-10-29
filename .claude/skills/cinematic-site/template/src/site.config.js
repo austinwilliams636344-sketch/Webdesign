@@ -134,6 +134,10 @@ export default {
     ch3: [0.24, 0.2, 0.88, 0.86], // keyframe 4: the finished scene
   },
 
+  // Shown instead of the film until one is extracted (e.g. real photos or K1–K4 stills). 1–4 images:
+  // hero, chapter 1, 2, 3. Leave [] when a film exists; the film always wins.
+  stills: [],
+
   marquee: ['Tier-1 N-type modules', 'Certified in-house crews', '25-year performance warranty', 'Drone-surveyed designs', 'Live app monitoring', 'Home battery storage', 'EV charging', 'Fixed-price quotes'],
   marqueeIcon: Sun,
 

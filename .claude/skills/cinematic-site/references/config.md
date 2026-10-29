@@ -35,6 +35,7 @@ JetBrains Mono labels). They suit almost every premium brand; only swap them if 
 | `quote` | Hero form: `field`, `slider` (`format(v)`), `estimate(v) → [{label, value, highlight}]` (first 2 = live preview, all = result), `mobileHint(v)`, button texts, `privacy`, `doneText` | Make the slider the one number that drives value for this industry (bill, m², rooms, budget, team size). Keep maths plausible and call it an estimate |
 | `chapters[3]` | `eyebrow`, `title`, `flourish`, `body`, `aside` | aside: `{type:'stat', value, text}` (ch1), `{type:'list', items:[{t,d}]}` (ch2: the K3 parts), `{type:'stats', items:[[value,label]×3]}` (ch3) |
 | `filmSubjects` | `{hero, ch1, ch2, ch3}` boxes `[x0,y0,x1,y1]` | See film-pipeline.md §5 |
+| `stills[]` | 1–4 image paths: hero, ch1, ch2, ch3 | Shown instead of the film until one is extracted (film mode `brief`); crossfades on scroll. The film always wins. |
 | `marquee[]`, `marqueeIcon` | 6–8 short proof points + an industry icon | |
 | `pillars` | `eyebrow/title/flourish`, `stats[]` `{end, decimals, prefix, suffix, label}` ×4 | Real numbers only |
 | `features[3]` | `kind: 'notifications'` (`items[]` ×3 `{icon,t,d}`), `'signature'` (`particle`, `surface`, `counter{label,unit,start,step,decimals}`), `'booking'` (`heading`, `note`, `confirm`) + each `k`, `t`, `d` | Signature particle: `streak` light, `drop` water, `spark` electric/heat/tech |

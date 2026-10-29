@@ -9,6 +9,9 @@ import { createFramePlayer } from '../lib/framePlayer.js'
 
 gsap.registerPlugin(ScrollTrigger)
 
+// No film extracted yet: show site.stills (1–4 images: hero, ch1, ch2, ch3) and crossfade them on scroll.
+const STILLS = Object.values(FILMS).some((f) => f.count > 0) ? null : site.stills?.length ? site.stills.slice(0, 4) : null
+
 const H2 = 'font-display text-[34px] font-bold leading-[1] tracking-tighter sm:text-5xl side:text-[56px]'
 const BODY = 'mt-4 text-[15px] leading-relaxed text-ink/70 sm:text-base side:mt-6 side:text-lg'
 
@@ -171,6 +174,9 @@ export default function ScrollFilm({ film }) {
       tl.to(cam, { t: 2, duration: 0.08, ease: 'power2.inOut', onUpdate: moveCam }, 0.33)
       tl.to(cam, { t: 3, duration: 0.09, ease: 'power2.inOut', onUpdate: moveCam }, 0.68)
 
+      // Stills (no film yet): crossfade to the next image as each chapter comes in
+      if (STILLS) [0.1, 0.36, 0.7].slice(0, STILLS.length - 1).forEach((at, i) => tl.to(`.still-${i + 1}`, { opacity: 1, duration: 0.06 }, at))
+
       // Hero out
       tl.to('.hero-copy', { autoAlpha: 0, y: -80, duration: 0.06, ease: 'power1.in' }, 0.035)
       tl.to('.hero-form', { autoAlpha: 0, y: -60, duration: 0.05, ease: 'power1.in' }, 0.045)
@@ -195,6 +201,11 @@ export default function ScrollFilm({ film }) {
     <section id="home" ref={wrap} className="relative" style={{ height: '640vh' }}>
       <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
         <canvas ref={canvas} className="absolute inset-0 h-full w-full [transform:translateZ(0)]" aria-hidden="true" />
+        {STILLS?.map((src, i) => (
+          <img key={i} src={src} alt="" aria-hidden="true" loading={i ? 'lazy' : 'eager'} fetchPriority={i ? undefined : 'high'}
+            className={`still-${i} absolute inset-0 h-full w-full object-cover`} style={{ opacity: i ? 0 : 1 }} />
+        ))}
+        {STILLS && <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background/85 via-background/55 to-background/10" />}
 
         {/* Edge blending so the film melts into the page */}
         <div className="pointer-events-none absolute inset-0 [background:radial-gradient(120%_90%_at_50%_45%,transparent_55%,theme(colors.background/85%)_100%)]" />

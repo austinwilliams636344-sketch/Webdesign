@@ -99,3 +99,22 @@ Measure them on the 4 keyframes (open them, estimate the box with ~5 % padding):
 
 Then run `npm run qa:layout` and adjust until no chapter text overlaps the subject at any size.
 Typical values: scene `[0.25, 0.12, 0.85, 0.9]`, floating object `[0.06, 0.2, 0.94, 0.8]`, exploded `[0.1, 0.05, 0.9, 0.95]`.
+
+## 6. Film brief (film mode `brief`: the user generates the film)
+
+When there are no generation tools in the session, or the user wants to make the videos themselves, write
+`<site>/film/FILM-BRIEF.md` with every bracket filled for this business:
+
+1. **Story in one line** (K1 → K4) and which storyboard it follows.
+2. **Keyframes K1–K4**: the full prompts from §1, plus: "16:9, highest quality, 2K". Tell them to make K1
+   first, then use K1 as the reference image for K2–K4 (same camera angle), and to check each one (voids pure
+   black, K4 matches K1, no text, logos or faces). If they have a real photo of the place, use it as K1's reference.
+3. **Videos S1–S3**: the prompts from §2, each with its start and end frame (S1 = K1→K2, S2 = K2→K3,
+   S3 = K3→K4), 8 s, 16:9, 1080p, no audio. Name tools that support start + end frames (Higgsfield, Topview,
+   Kling, Runway, Luma) and that Seedance 2.5 followed the story best in testing.
+4. **What to send back**: `seg1.mp4`, `seg2.mp4`, `seg3.mp4` (and K1–K4 PNGs, used to set `filmSubjects`).
+5. **How it goes in**: `npm run film -- main "Main" film/seg1.mp4 film/seg2.mp4 film/seg3.mp4 --default`, then
+   set `filmSubjects` (§5), clear `stills`, and re-run QA.
+
+Optional extras worth listing, each one line with a ready prompt: a 6–10 s hero loop for social/ads, a vertical
+9:16 cut of S1 for Reels/TikTok, and a still of K4 for the contact background.

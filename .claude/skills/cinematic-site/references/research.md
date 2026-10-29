@@ -13,6 +13,18 @@ site needs, each with its source URL, plus the client's real images downloaded t
   review count, real review quotes, opening hours, years in business.
 If Firecrawl is unavailable use WebFetch / WebSearch the same way.
 
+## No website (common for rural trades)
+Use what exists, in this order, and save each source URL:
+1. **Google Business Profile / Maps**: name, category, address, phone, hours, rating, review count, real
+   review quotes, owner photos, "from the business" description, service list, service area. Use the Maps link
+   if the user gave one, else `WebSearch` "<name> <city>" and the Maps/knowledge-panel result.
+2. **Facebook page**: about text, services, photos, posts showing real jobs.
+3. Directories: Yelp, BBB, Angi, state licence lookups (only for facts they actually show).
+Google often blocks scraping; when a source can't be read, ask the user to paste the details (hours, services,
+5–8 reviews with first names and star ratings) rather than guessing. Their profile photos are usually the only
+real images: download what you can reach, otherwise ask the user for them and generate only empty slots.
+Without a site there is no brand: pick the palette from the industry row in config.md and say so.
+
 ## Extraction schema
 ```json
 {
